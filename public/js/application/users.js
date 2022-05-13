@@ -44,8 +44,6 @@ openValidationWindow = (title, method, user_id = null) => {
         preConfirm: () => {
             const data = prepareData(method, user_id);
             post('users', data).done(function (response) {
-
-                console.log(response);
                 if(isSuccess(response)){
                     return new Notifications('message', response, '/');
                 }
